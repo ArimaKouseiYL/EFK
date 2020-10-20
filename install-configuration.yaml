@@ -1,0 +1,20 @@
+
+##
+## fluent-bit、kafka安装文档  基于helm3安装
+##
+
+# fluent-bit
+# chart version 0.7.3
+helm repo add fluent https://fluent.github.io/helm-charts
+#[root@kube-compute-node-204 efk]# helm search repo fluent/fluent-bit --version 0.7.3
+#  NAME                    CHART VERSION   APP VERSION     DESCRIPTION
+#  fluent/fluent-bit       0.7.3           1.5.7           Fast and lightweight log processor and forwarde...
+helm pull fluent/fluent-bit --version 0.7.3
+
+  # kafka
+helm repo add bitnami https://charts.bitnami.com/bitnami
+#[root@kube-compute-node-204 efk]# helm search repo bitnami/kafka
+#  NAME            CHART VERSION   APP VERSION     DESCRIPTION
+#  bitnami/kafka   11.8.6          2.6.0           Apache Kafka is a distributed streaming platform.
+
+helm pull bitnami/kafka --version 11.8.6
