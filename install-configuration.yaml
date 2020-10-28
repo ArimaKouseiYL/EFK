@@ -1,6 +1,6 @@
 
 ##
-## fluent-bit、kafka安装文档  基于helm3安装
+## fluent-bit、kafka、elasticsearch-curator安装文档  基于helm3安装
 ##
 
 # fluent-bit
@@ -18,3 +18,15 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 #  bitnami/kafka   11.8.6          2.6.0           Apache Kafka is a distributed streaming platform.
 
 helm pull bitnami/kafka --version 11.8.6
+
+
+###
+### elasticsearch-curator是定时清理 es的indices数据的工具，基于helm安装，然后修改values.yaml的es服务名就能正常使用了
+### https://artifacthub.io/packages/helm/helm-stable/elasticsearch-curator
+###
+helm search repo stable/elasticsearch-curator
+helm pull stable/elasticsearch-curator --version=2.2.1
+
+
+
+
