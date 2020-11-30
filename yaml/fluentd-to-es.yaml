@@ -63,6 +63,7 @@ data:
       @type tail                              # Fluentd 内置的输入方式，其原理是不停地从源文件中获取新的日志。
       path /var/log/containers/*.log          # 挂载的服务器Docker容器日志地址
       pos_file /var/log/es-containers.log.pos
+      exclude_path /var/log/containers/fluentd-es*.log        # 这里将fluentd-es自己的日志排除，不采集
       tag raw.kubernetes.*                    # 设置日志标签
       read_from_head true
       <parse>                                 # 多行格式化成JSON
@@ -168,7 +169,7 @@ data:
         flush_interval 5s
         retry_forever
         retry_max_interval 30
-        chunk_limit_size 2M
+        chunk_limit_size 200M
         queue_limit_length 8
         overflow_action block
       </buffer>

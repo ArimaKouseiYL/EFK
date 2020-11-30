@@ -76,7 +76,7 @@ spec:
             - name: discovery.seed_hosts
               value: "elasticsearch"
             - name: ES_JAVA_OPTS
-              value: "-Xms512m -Xmx512m"
+              value: "-Xms12074m -Xmx12074m"
             - name: network.host
               value: "0.0.0.0"
   volumeClaimTemplates:
